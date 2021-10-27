@@ -1,0 +1,9 @@
+version: '3'
+services:
+  jenkins:
+    container_name: the_example_nodejs_app
+    image: the_example_nodejs_app
+    build:
+      context: . # folder chua docker file
+    ports:
+      - "3000:3000"
