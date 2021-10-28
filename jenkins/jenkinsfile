@@ -1,6 +1,9 @@
 pipeline {
     
     agent any  
+    environment {
+        PASS = credentials('dockerpassfortuedtvt') 
+    }
     stages {
         stage('Prepare') {
                     
@@ -17,6 +20,13 @@ pipeline {
                     chmod +x -R ./jenkins/build/build.sh
                     ./jenkins/build/build.sh
                 '''
+            }
+        }
+        stage('Push') {
+            steps {
+                sh '''
+                chmod +x -R ./jenkins/push/push.sh
+                ./jenkins/push/push.sh''
             }
         }
     }
