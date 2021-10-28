@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh '''
                     echo $PWD
-                    chmod +x -R /jenkins/build/build.sh
+                    chmod +x -R ./jenkins/build/build.sh
                     ./jenkins/build/build.sh
                 '''
             }
