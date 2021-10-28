@@ -1,0 +1,20 @@
+pipeline {
+    agent any  
+    stages {
+        stage('Prepare') {
+                    
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+                    
+            steps {
+                sh '''
+                    echo $PWD
+                '''
+            }
+        }
+    }
+}
