@@ -27,6 +27,7 @@ pipeline {
                 sh '''
                 chmod +x -R ./jenkins/push/push.sh
                 ./jenkins/push/push.sh''
+                '''
             }
         }
     }
