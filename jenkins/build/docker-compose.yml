@@ -4,6 +4,6 @@ services:
     container_name: the_example_nodejs_app
     image: the_example_nodejs_app
     build:
-      context: . # folder chua docker file
+      context: '/var/jenkins_home/workspace/the_nodejs_examble_pipeline' # folder chua docker file
     ports:
       - "3000:3000"
