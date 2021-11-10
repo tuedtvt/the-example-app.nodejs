@@ -19,7 +19,7 @@ pipeline {
             steps {
                 sh '''    
                     echo $PWD            
-                    docker build -f Dockerfile -t the_example_nodejs_app:latest 
+                    docker build -f Dockerfile -t the_example_nodejs_app:latest .
                 '''
             }
         }
