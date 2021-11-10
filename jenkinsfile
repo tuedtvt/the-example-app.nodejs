@@ -1,0 +1,52 @@
+pipeline {
+    
+    agent any  
+    environment {
+        PASS = credentials('dockerpassfortuedtvt') 
+        ASSESSKEY = credentials('secretaccesskeyforrootaws')
+        sonarqubeScannerHome = tool name: 'sonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+    }
+    stages {
+        stage('Prepare') {
+                    
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+                    
+            steps {
+                sh '''                
+                    docker build -f Dockerfile -t the_example_nodejs_app:latest 
+                '''
+            }
+        }
+        stage('Push') {
+            steps {
+                sh '''
+                docker login -u tuedtvt -p $PASS
+                docker tag the_example_nodejs_app:latest tuedtvt/the_example_nodejs_app:latest
+                docker push tuedtvt/the_example_nodejs_app:latest
+                '''
+            }
+        }
+        stage('reload ecs service'){
+            steps{
+                sh '''
+                export AWS_ACCESS_KEY_ID=AKIARACODVBHJY2VT6MC
+                export AWS_SECRET_ACCESS_KEY=$ASSESSKEY
+                aws ecs update-service --cluster Nodjsapp-Cluster --service nodejsapp-Service --force-new-deployment --region ap-southeast-1
+                '''
+            }
+        }
+        stage('sonar-scanner') {
+            steps{
+                withCredentials([string(credentialsId: 'sonar', variable: 'sonarLogin')]) { // sonarqube:9000 neu chay jenkin chung trong docker compose vi jenkin install o may local nen la localhost
+                    sh "${sonarqubeScannerHome}/bin/sonar-scanner -e -Dsonar.host.url=http://host.docker.internal:9000 -Dsonar.login=${sonarLogin} -Dsonar.projectName=nodejs -Dsonar.projectVersion=${env.BUILD_NUMBER} -Dsonar.projectKey=node-nagp -Dsonar.sources=./  -Dsonar.language=js -Dsonar.sourceEncoding=UTF-8"
+                }
+               
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+  "family": "nodejsappservice",
+  "cpu": "256",
+  "memory": "512",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "executionRoleArn": "arn:aws:iam::068883294286:role/Nodejsappstack-EcsServiceRole-1QN5LWV49BOUU",
+  "taskRoleArn": "arn:aws:iam::068883294286:role/Nodejsappstack-ECSTaskRole-Z28HVXZPF6RS",
+  "containerDefinitions": [
+    {
+      "name": "nodejsapp-Service",
+      "image": "tuedtvt/the_example_nodejs_app",
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "protocol": "http"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "nodejsapp-logs",
+          "awslogs-region": "ap-southeast-1",
+          "awslogs-stream-prefix": "awslogs-nodejsapp-service"
+        }
+      },
+      "essential": true
+    }
+  ]
+}

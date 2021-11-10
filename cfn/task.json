@@ -1,0 +1,70 @@
+{
+    "taskDefinition": {
+        "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:068883294286:task-definition/nodejsappservice:1",
+        "containerDefinitions": [
+            {
+                "name": "nodejsapp-Service",
+                "image": "tuedtvt/the_example_nodejs_app",
+                "cpu": 0,
+                "portMappings": [
+                    {
+                        "containerPort": 3000,
+                        "hostPort": 3000,
+                        "protocol": "tcp"
+                    }
+                ],
+                "essential": true,
+                "environment": [],
+                "mountPoints": [],
+                "volumesFrom": [],
+                "logConfiguration": {
+                    "logDriver": "awslogs",
+                    "options": {
+                        "awslogs-group": "nodejsapp-logs",
+                        "awslogs-region": "ap-southeast-1",
+                        "awslogs-stream-prefix": "awslogs-nodejsapp-service"
+                    }
+                }
+            }
+        ],
+        "family": "nodejsappservice",
+        "taskRoleArn": "arn:aws:iam::068883294286:role/Nodejsappstack-ECSTaskRole-Z28HVXZPF6RS",
+        "executionRoleArn": "arn:aws:iam::068883294286:role/Nodejsappstack-EcsServiceRole-1QN5LWV49BOUU",
+        "networkMode": "awsvpc",
+        "revision": 1,
+        "volumes": [],
+        "status": "ACTIVE",
+        "requiresAttributes": [
+            {
+                "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+            },
+            {
+                "name": "ecs.capability.execution-role-awslogs"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.task-iam-role"
+            },
+            {
+                "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+            },
+            {
+                "name": "ecs.capability.task-eni"
+            }
+        ],
+        "placementConstraints": [],
+        "compatibilities": [
+            "EC2",
+            "FARGATE"
+        ],
+        "requiresCompatibilities": [
+            "FARGATE"
+        ],
+        "cpu": "256",
+        "memory": "512",
+        "registeredAt": "2021-11-10T17:44:53.088000+07:00",
+        "registeredBy": "arn:aws:iam::068883294286:root"
+    }
+}

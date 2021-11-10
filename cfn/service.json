@@ -1,0 +1,84 @@
+{
+    "service": {
+        "serviceArn": "arn:aws:ecs:ap-southeast-1:068883294286:service/Nodjsapp-Cluster/nodejsapp-Service",
+        "serviceName": "nodejsapp-Service",
+        "clusterArn": "arn:aws:ecs:ap-southeast-1:068883294286:cluster/Nodjsapp-Cluster",
+        "loadBalancers": [
+            {
+                "targetGroupArn": "arn:aws:elasticloadbalancing:ap-southeast-1:068883294286:targetgroup/nodejsapp-TargetGroup/984942d593bde640",
+                "containerName": "nodejsapp-Service",
+                "containerPort": 3000
+            }
+        ],
+        "serviceRegistries": [],
+        "status": "ACTIVE",
+        "desiredCount": 1,
+        "runningCount": 0,
+        "pendingCount": 0,
+        "launchType": "FARGATE",
+        "platformVersion": "LATEST",
+        "platformFamily": "Linux",
+        "taskDefinition": "arn:aws:ecs:ap-southeast-1:068883294286:task-definition/nodejsappservice:1",
+        "deploymentConfiguration": {
+            "deploymentCircuitBreaker": {
+                "enable": false,
+                "rollback": false
+            },
+            "maximumPercent": 200,
+            "minimumHealthyPercent": 0
+        },
+        "deployments": [
+            {
+                "id": "ecs-svc/5216197570383730235",
+                "status": "PRIMARY",
+                "taskDefinition": "arn:aws:ecs:ap-southeast-1:068883294286:task-definition/nodejsappservice:1",
+                "desiredCount": 1,
+                "pendingCount": 0,
+                "runningCount": 0,
+                "failedTasks": 0,
+                "createdAt": "2021-11-10T18:17:55.030000+07:00",
+                "updatedAt": "2021-11-10T18:17:55.030000+07:00",
+                "launchType": "FARGATE",
+                "platformVersion": "1.4.0",
+                "platformFamily": "Linux",
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-0175d32bf06aee24c",
+                            "subnet-03fd2c534eaa8320c"
+                        ],
+                        "securityGroups": [
+                            "sg-03dfa7a5d61c2ee00"
+                        ],
+                        "assignPublicIp": "DISABLED"
+                    }
+                },
+                "rolloutState": "IN_PROGRESS",
+                "rolloutStateReason": "ECS deployment ecs-svc/5216197570383730235 in progress."
+            }
+        ],
+        "roleArn": "arn:aws:iam::068883294286:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+        "events": [],
+        "createdAt": "2021-11-10T18:17:55.030000+07:00",
+        "placementConstraints": [],
+        "placementStrategy": [],
+        "networkConfiguration": {
+            "awsvpcConfiguration": {
+                "subnets": [
+                    "subnet-0175d32bf06aee24c",
+                    "subnet-03fd2c534eaa8320c"
+                ],
+                "securityGroups": [
+                    "sg-03dfa7a5d61c2ee00"
+                ],
+                "assignPublicIp": "DISABLED"
+            }
+        },
+        "healthCheckGracePeriodSeconds": 0,
+        "schedulingStrategy": "REPLICA",
+        "createdBy": "arn:aws:iam::068883294286:root",
+        "enableECSManagedTags": false,
+        "propagateTags": "NONE",
+        "enableExecuteCommand": false
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "serviceName": "nodejsapp-Service",
+  "cluster": "Nodjsapp-Cluster",
+  "launchType": "FARGATE",
+  "deploymentConfiguration": {
+    "maximumPercent": 200,
+    "minimumHealthyPercent": 0
+  },
+  "desiredCount": 1,
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "assignPublicIp": "DISABLED",
+      "securityGroups": [
+        "sg-03dfa7a5d61c2ee00"
+      ],
+      "subnets": [
+        "subnet-0175d32bf06aee24c",
+        "subnet-03fd2c534eaa8320c"
+      ]
+    }
+  },
+  "taskDefinition": "nodejsappservice",
+  "loadBalancers": [
+    {
+      "containerName": "nodejsapp-Service",
+      "containerPort": 3000,
+      "targetGroupArn": "arn:aws:elasticloadbalancing:ap-southeast-1:068883294286:targetgroup/nodejsapp-TargetGroup/984942d593bde640"
+    }
+  ]
+}

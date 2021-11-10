@@ -1,0 +1,23 @@
+{
+    "Listeners": [
+        {
+            "ListenerArn": "arn:aws:elasticloadbalancing:ap-southeast-1:068883294286:listener/net/nodejsapp-nlb/e199d1ea3ee854ce/d9fe356e63c61346",
+            "LoadBalancerArn": "arn:aws:elasticloadbalancing:ap-southeast-1:068883294286:loadbalancer/net/nodejsapp-nlb/e199d1ea3ee854ce",
+            "Port": 80,
+            "Protocol": "TCP",
+            "DefaultActions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:ap-southeast-1:068883294286:targetgroup/nodejsapp-TargetGroup/984942d593bde640",
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:ap-southeast-1:068883294286:targetgroup/nodejsapp-TargetGroup/984942d593bde640"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

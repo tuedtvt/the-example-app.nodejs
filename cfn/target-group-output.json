@@ -1,0 +1,23 @@
+{
+    "TargetGroups": [
+        {
+            "TargetGroupArn": "arn:aws:elasticloadbalancing:ap-southeast-1:068883294286:targetgroup/nodejsapp-TargetGroup/984942d593bde640",
+            "TargetGroupName": "nodejsapp-TargetGroup",
+            "Protocol": "TCP",
+            "Port": 3000,
+            "VpcId": "vpc-04d186790b81d6156",
+            "HealthCheckProtocol": "HTTP",
+            "HealthCheckPort": "traffic-port",
+            "HealthCheckEnabled": true,
+            "HealthCheckIntervalSeconds": 10,
+            "HealthCheckTimeoutSeconds": 6,
+            "HealthyThresholdCount": 3,
+            "UnhealthyThresholdCount": 3,
+            "HealthCheckPath": "/",
+            "Matcher": {
+                "HttpCode": "200-399"
+            },
+            "TargetType": "ip"
+        }
+    ]
+}

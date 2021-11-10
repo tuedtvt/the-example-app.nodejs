@@ -1,0 +1,30 @@
+{
+    "LoadBalancers": [
+        {
+            "LoadBalancerArn": "arn:aws:elasticloadbalancing:ap-southeast-1:068883294286:loadbalancer/net/nodejsapp-nlb/e199d1ea3ee854ce",
+            "DNSName": "nodejsapp-nlb-e199d1ea3ee854ce.elb.ap-southeast-1.amazonaws.com",
+            "CanonicalHostedZoneId": "ZKVM4W9LS7TM",
+            "CreatedTime": "2021-11-10T10:51:21.733000+00:00",
+            "LoadBalancerName": "nodejsapp-nlb",
+            "Scheme": "internet-facing",
+            "VpcId": "vpc-04d186790b81d6156",
+            "State": {
+                "Code": "provisioning"
+            },
+            "Type": "network",
+            "AvailabilityZones": [
+                {
+                    "ZoneName": "ap-southeast-1b",
+                    "SubnetId": "subnet-0b83ce156decec7cf",
+                    "LoadBalancerAddresses": []
+                },
+                {
+                    "ZoneName": "ap-southeast-1a",
+                    "SubnetId": "subnet-09358e8236db3cb2d",
+                    "LoadBalancerAddresses": []
+                }
+            ],
+            "IpAddressType": "ipv4"
+        }
+    ]
+}

@@ -1,0 +1,84 @@
+{
+    "Stacks": [
+        {
+            "StackId": "arn:aws:cloudformation:ap-southeast-1:068883294286:stack/Nodejsappstack/ae1bcc10-4210-11ec-9b86-027d16bb7716",
+            "StackName": "Nodejsappstack",
+            "Description": "This stack deploys the core network infrastructure and IAM resources to be used for a service hosted in Amazon ECS using AWS Fargate.",
+            "CreationTime": "2021-11-10T10:26:35.043000+00:00",
+            "RollbackConfiguration": {},
+            "StackStatus": "CREATE_COMPLETE",
+            "DisableRollback": false,
+            "NotificationARNs": [],
+            "Capabilities": [
+                "CAPABILITY_NAMED_IAM"
+            ],
+            "Outputs": [
+                {
+                    "OutputKey": "CurrentAccount",
+                    "OutputValue": "068883294286",
+                    "Description": "REPLACE_ME_ACCOUNT_ID",
+                    "ExportName": "Nodejsappstack:CurrentAccount"
+                },
+                {
+                    "OutputKey": "FargateContainerSecurityGroup",
+                    "OutputValue": "sg-03dfa7a5d61c2ee00",
+                    "Description": "REPLACE_ME_SECURITY_GROUP_ID",
+                    "ExportName": "Nodejsappstack:FargateContainerSecurityGroup"
+                },
+                {
+                    "OutputKey": "PublicSubnetOne",
+                    "OutputValue": "subnet-09358e8236db3cb2d",
+                    "Description": "REPLACE_ME_PUBLIC_SUBNET_ONE",
+                    "ExportName": "Nodejsappstack:PublicSubnetOne"
+                },
+                {
+                    "OutputKey": "ECSTaskRole",
+                    "OutputValue": "arn:aws:iam::068883294286:role/Nodejsappstack-ECSTaskRole-Z28HVXZPF6RS",
+                    "Description": "REPLACE_ME_ECS_TASK_ROLE_ARN",
+                    "ExportName": "Nodejsappstack:ECSTaskRole"
+                },
+                {
+                    "OutputKey": "PrivateSubnetTwo",
+                    "OutputValue": "subnet-03fd2c534eaa8320c",
+                    "Description": "REPLACE_ME_PRIVATE_SUBNET_TWO",
+                    "ExportName": "Nodejsappstack:PrivateSubnetTwo"
+                },
+                {
+                    "OutputKey": "CurrentRegion",
+                    "OutputValue": "ap-southeast-1",
+                    "Description": "REPLACE_ME_REGION",
+                    "ExportName": "Nodejsappstack:CurrentRegion"
+                },
+                {
+                    "OutputKey": "VPCId",
+                    "OutputValue": "vpc-04d186790b81d6156",
+                    "Description": "REPLACE_ME_VPC_ID",
+                    "ExportName": "Nodejsappstack:VPCId"
+                },
+                {
+                    "OutputKey": "PublicSubnetTwo",
+                    "OutputValue": "subnet-0b83ce156decec7cf",
+                    "Description": "REPLACE_ME_PUBLIC_SUBNET_TWO",
+                    "ExportName": "Nodejsappstack:PublicSubnetTwo"
+                },
+                {
+                    "OutputKey": "EcsServiceRole",
+                    "OutputValue": "arn:aws:iam::068883294286:role/Nodejsappstack-EcsServiceRole-1QN5LWV49BOUU",
+                    "Description": "REPLACE_ME_ECS_SERVICE_ROLE_ARN",
+                    "ExportName": "Nodejsappstack:EcsServiceRole"
+                },
+                {
+                    "OutputKey": "PrivateSubnetOne",
+                    "OutputValue": "subnet-0175d32bf06aee24c",
+                    "Description": "REPLACE_ME_PRIVATE_SUBNET_ONE",
+                    "ExportName": "Nodejsappstack:PrivateSubnetOne"
+                }
+            ],
+            "Tags": [],
+            "EnableTerminationProtection": false,
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        }
+    ]
+}
